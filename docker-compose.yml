@@ -1,0 +1,5 @@
+services:
+  bluetooth:
+    build: ./plugins/bluetooth
+    restart: on-failure
+    network_mode: host

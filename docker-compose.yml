@@ -1,5 +1,11 @@
 version: '2.0'
+
 services:
+
+  tiltscanner:
+    build: ./services/tiltscanner
+    restart: on-failure
+
   bluetooth:
     build: ./services/bluetooth
     restart: on-failure

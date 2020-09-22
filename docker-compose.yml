@@ -2,9 +2,19 @@ version: '2.0'
 
 services:
 
+  testsvc:
+    build: ./services/testsvc
+    restart: on-failure
+    network_mode: host
+
   tiltscanner:
     build: ./services/tiltscanner
     restart: on-failure
+    network_mode: host
+    labels:
+      io.balena.features.dbus: 1
+    environment:
+      - 'DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket'
 
   bluetooth:
     build: ./services/bluetooth

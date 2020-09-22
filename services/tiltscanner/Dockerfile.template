@@ -1,8 +1,8 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-python:3.7.7-run
+FROM balenalib/%%BALENA_MACHINE_NAME%%-python:3.7.7
 
 WORKDIR /usr/src/
 
-COPY src/* .
+COPY src/* ./
 
 # Enable udevd so that plugged dynamic hardware devices show up in our container.
 # ENV UDEV=1
